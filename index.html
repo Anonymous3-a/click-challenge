@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Click Challenge</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript">
+      <!-- spaghetti code ahead! -->
+      function load() {
+        let truetime = 10;
+        let clicks = 0;
+      };
+      function start() {
+        document.getElementById("main_btn").style.display = "inline";
+        document.getElementById("start_btn").style.display = "none";
+        end();
+        setInterval(() => {
+          if(document.getElementById("criteria").innerHTML === "clicks"){
+            return;
+          }
+          let truecd = parseInt(document.getElementById("total").innerHTML)
+          document.getElementById("total").innerHTML = truecd - 1;
+        }, 1000)
+      }
+      function score() {
+        let cc = parseInt(document.getElementById("score").innerHTML)
+        console.log("Click!")
+        document.getElementById("score").innerHTML = `${cc+1}`;
+        return;
+      }
+      function end() {
+        setTimeout(() => {
+          document.getElementById("restart").style.display = "inline";
+          document.getElementById("scores").style.display = "inline";
+          document.getElementById("total").innerHTML = document.getElementById("score").innerHTML
+          document.getElementById("criteria").innerHTML = "clicks"
+          document.getElementById("main_btn").style.display = "none";
+        }, 10000)
+      }
+    </script>
+  </head>
+  <body onload="load();">
+    <div id="header">
+      <table class="content">
+        <tr>
+          <td>
+            <h3>
+              Click Challenge
+            </h3>
+          </td>
+          <td style="text-align: right;">
+            <a href="//github.com/Cyanic76/click-me">
+              View source on GitHub
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br><br>
+    <!-- this adds a padding to the contents and it's better -->
+    <div class="content" id="begin">
+      Click the button below as fast as you can.<br>
+      You get <b>10</b> seconds to score the highest possible!<br>
+      <br>
+      <div id="scores">
+        <span id="total">10</span><br>
+        <span id="criteria">seconds</span>
+      </div>
+      <br>
+      <button id="start_btn" onclick="start();">
+        <span style="font-size: 18px;">Start!</span>
+      </button>
+      <button id="main_btn" onclick="score();" style="display: none;">
+        <span id="score">0</span><br>
+        <span style="font-size: 18px;">clicks</span>
+      </button><br>
+      <a href="index.html" id="restart" style="display: none;">
+        <span style="font-size: 18px;">Play again?</span>
+      </a>
+    </div>
+  </body>
+</html>
