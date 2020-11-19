@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body {
+  font-family: 'Montserrat';
+  color: black;
+  background-color: white;
+  margin: 0em;
+}
+
+.content {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+#score {
+  font-size: 35px;
+}
+
+#total, #countdown {
+  font-size: 40px;
+}
+
+button {
+  width: 100%;
+  height: 300px;
+  max-height: 100%;
+  background-color: white;
+  border: 2px blue solid;
+  font-family: 'Montserrat';
+}
+
+#restart {
+  width: 100%;
+  background-color: white;
+  color: red;
+  font-family: 'Montserrat';
+}
